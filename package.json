@@ -1,6 +1,6 @@
 {
   "name": "grunt-coffeecov",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Compile CoffeeScript to Javascript Coverage",
   "main": "Gruntfile.js",
   "scripts": {
