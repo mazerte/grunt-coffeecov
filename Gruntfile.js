@@ -6,8 +6,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     coffeecov: {
       options: {
-        path: 'relative',
-        srcBasePath: 'test/src'
+        path: 'relative'
       },
       all: {
         src: 'test/src',
