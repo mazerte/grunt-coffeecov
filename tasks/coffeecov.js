@@ -4,9 +4,12 @@ module.exports = function(grunt) {
 
 	grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', function() {
 
-		var options = this.options({});
+		var options = this.options({
+			path: 'relative',
+			srcBasePath: ''
+		});
 
-		var coverageInstrumentor = new CoverageInstrumentor({});
+		var coverageInstrumentor = new CoverageInstrumentor(options);
 		try {
 
 			var result = coverageInstrumentor.instrument(this.data.src, this.data.dest, {});

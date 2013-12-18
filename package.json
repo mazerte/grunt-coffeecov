@@ -21,7 +21,7 @@
     "node": "*"
   },
   "dependencies": {
-    "coffee-coverage": "~0.3.0"
+    "coffee-coverage": "git://github.com/mazerte/coffee-coverage"
   },
   "peerDependencies": {
     "grunt": "~0.4"
