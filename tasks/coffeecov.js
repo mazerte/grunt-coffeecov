@@ -3,10 +3,6 @@ var path = require('path')
 	, fs = require('fs')
   , mkdirs = require('coffee-coverage/lib/helpers').mkdirs;
 
-var st = fs.createWriteStream('test.txt');
-st.write('toto coverage');
-st.end();
-
 module.exports = function(grunt) {
 
 	grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', function() {
