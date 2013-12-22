@@ -23,7 +23,6 @@ function checkCov(variable, exclude) {
   content.should.have.string(variable + '["test.coffee"]');
 
   if(exclude) {
-    console.log('message');
     expect("test/src-cov/exclude.js").to.not.be.a.path();
     expect("test/src-cov/exclude/file.js").to.not.be.a.path();
   } else {
