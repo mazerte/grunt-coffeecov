@@ -30,7 +30,6 @@ module.exports = function(grunt) {
           done();
         });
 
-        options.initAll = true;
         options.initFileStream = stream;
       }
 
