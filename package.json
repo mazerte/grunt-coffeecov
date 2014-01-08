@@ -12,6 +12,7 @@
   },
   "keywords": [
     "grunt",
+    "gruntplugin",
     "coffeescript",
     "coverage"
   ],
