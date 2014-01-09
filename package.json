@@ -22,7 +22,7 @@
     "node": "*"
   },
   "dependencies": {
-    "coffee-coverage": "~0.3.0"
+    "coffee-coverage": "~0.4.0"
   },
   "peerDependencies": {
     "grunt": "~0.4"
