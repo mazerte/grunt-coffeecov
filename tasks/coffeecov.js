@@ -29,6 +29,9 @@ module.exports = function(grunt) {
         stream.on('end', function() {
           done();
         });
+        stream.on('close', function() {
+          done();
+        });
 
         options.initFileStream = stream;
       }
@@ -37,7 +40,7 @@ module.exports = function(grunt) {
 
       if(options.initFileStream) {
         options.initFileStream.end();
-      } else {
+      } else {        
         done();
       }
 
