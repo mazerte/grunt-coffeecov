@@ -1,6 +1,6 @@
 {
   "name": "grunt-coffeecov",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Grunt task to compile CoffeeScript to Javascript Coverage",
   "main": "Gruntfile.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mazerte/grunt-coffeecov"
+    "url": "https://github.com/mazerte/grunt-coffeecov.git"
   },
   "keywords": [
     "grunt",
@@ -18,9 +18,10 @@
   ],
   "author": "Mathieu Desvé",
   "license": "BSD",
-  "engines": {
-    "node": "*"
+  "bugs": {
+    "url": "https://github.com/mazerte/grunt-coffeecov/issues/"
   },
+  "homepage": "https://github.com/mazerte/grunt-coffeecov/",
   "dependencies": {
     "coffee-coverage": "~0.4.0"
   },
@@ -28,10 +29,13 @@
     "grunt": ">=0.4.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "chai-fs": "0.0.3",
     "chai": "~1.8.1",
-    "grunt-mocha-test": "~0.8.1",
-    "grunt-contrib-clean": "~0.5.0"
+    "chai-fs": "0.0.3",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-mocha-test": "~0.8.1"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
   }
 }
