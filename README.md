@@ -35,7 +35,7 @@ grunt.initConfig
   coffeecov:
     cov:
       src: 'src/coffee'
-      desc: 'lib-cov'
+      dest: 'lib-cov'
 ```
 
 Example with some options
@@ -50,7 +50,7 @@ grunt.initConfig
       options:
         initfile: 'lib-cov/coverage.js'
       src: 'src/coffee'
-      desc: 'lib-cov'
+      dest: 'lib-cov'
 ```
 
 You can find a real example in [Footguard](https://github.com/mazerte/generator-footguard), it's a [Yeoman](http://yeoman.io) generator for create a single page application with CoffeeScript, Sass, Backbone and Require. [Test-footguard](https://github.com/mazerte/test-footguard) is out of box project generated with [Footguard](https://github.com/mazerte/generator-footguard), you can read the `Gruntfile` and try the project. 
@@ -68,7 +68,7 @@ type: `String`
 
 Path to source folder
 
-#### desc
+#### dest
 
 type: `String`
 
