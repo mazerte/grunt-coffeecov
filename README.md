@@ -4,7 +4,7 @@ Grunt CoffeeCov
 [![Dependency Status](https://gemnasium.com/mazerte/grunt-coffeecov.png)](https://gemnasium.com/mazerte/grunt-coffeecov)
 [![Build Status](https://travis-ci.org/mazerte/grunt-coffeecov.png?branch=master)](https://travis-ci.org/mazerte/grunt-coffeecov)
 [![Code Climate](https://codeclimate.com/github/mazerte/grunt-coffeecov.png)](https://codeclimate.com/github/mazerte/grunt-coffeecov)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](https://gruntjs.com/)
 
 [![NPM](https://nodei.co/npm/grunt-coffeecov.png?downloads=true&stars=true)](https://nodei.co/npm/grunt-coffeecov/) 
 
@@ -55,7 +55,8 @@ grunt.initConfig
 
 You can find a real example in [Footguard][], a [Yeoman][] generator for
 creating a single page application with CoffeeScript, Sass, Backbone and
-Require. [Test-footguard][] is out of box project generated with [Footguard][], you can read the `Gruntfile` and try the project. 
+Require. [Test-footguard][] is an "out of the box" project generated with
+[Footguard][]; you can read the `Gruntfile` and try the project. 
 
 If you use [Mocha][] for your tests, I recommend using
 [grunt-phantom-coverage-reporter][]. It's fully compatible with this task
