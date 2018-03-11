@@ -55,7 +55,7 @@ grunt.initConfig
 
 You can find a real example in [Footguard](https://github.com/mazerte/generator-footguard), it's a [Yeoman](http://yeoman.io) generator for create a single page application with CoffeeScript, Sass, Backbone and Require. [Test-footguard](https://github.com/mazerte/test-footguard) is out of box project generated with [Footguard](https://github.com/mazerte/generator-footguard), you can read the `Gruntfile` and try the project. 
 
-If you use [Mocha](http://visionmedia.github.io/mocha/) for your tests, I recommend to use [grunt-phantom-coverage-reporter](https://github.com/mazerte/mocha-phantom-coverage-reporter). It's fully compatible with this tasks and coveralls.
+If you use [Mocha](http://mochajs.org/) for your tests, I recommend to use [grunt-phantom-coverage-reporter](https://github.com/mazerte/mocha-phantom-coverage-reporter). It's fully compatible with this tasks and coveralls.
 
 Options
 -------
