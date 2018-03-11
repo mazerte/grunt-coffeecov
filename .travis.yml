@@ -1,6 +1,20 @@
+###
+### .travis.yml
+###
+
+sudo: false
+os: linux
+dist: trusty
+
 language: node_js
 node_js:
-  - "0.10"
+  - 'node'
+  - '8'
+  - '6'
+  - '4'
+env:
+- NODE_ENV=development
 
 before_script:
   - npm install -g grunt-cli
+
