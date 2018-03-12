@@ -2,49 +2,62 @@
 
 module.exports = function(grunt) {
 
-  // Project configuration.
+  // Global configuration
+  var sourceDir = 'test/src';
+  var instrumentedDir = 'test/src-cov';
+
+  // Project configuration
   grunt.initConfig({
 
     coffeecov: {
       run: {
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src:  '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       covVar: {
         options: {
-          coverageVar: "_$cov"
+          coverageVar: '_$cov'
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src:  '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       initfile: {
         options: {
-          initfile: "test/src-cov/coverage.js"
+          initfile: '<%= instrumentedDir %>/coverage.js'
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src:  '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       exclude: {
         options: {
           exclude: [
-            "exclude.coffee",
-            "exclude"
+            'exclude.coffee',
+            'exclude'
           ]
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src:  '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
+      },
+      abbr: {
+        options: {
+          path: 'abbr'
+        },
+        src:  '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       relative: {
         options: {
           path: 'relative'
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src:  '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       }
     },
 
     clean: {
-      cov: ['test/src-cov'],
+      cov: [
+        '<%= instrumentedDir %>'
+      ],
     },
 
     mochaTest: {
