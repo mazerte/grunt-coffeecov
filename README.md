@@ -1,5 +1,3 @@
-Grunt task wrapper
-
 # Grunt CoffeeCov
 
 [![Build Status](https://travis-ci.org/mazerte/grunt-coffeecov.png?branch=master)](https://travis-ci.org/mazerte/grunt-coffeecov)
