@@ -3,11 +3,15 @@
 module.exports = function(grunt) {
 
   // Global configuration
-  var sourceDir = 'test/src';
-  var instrumentedDir = 'test/src-cov';
+  var _config = {
+    srcDir:  'test/src',
+    instDir: 'test/src-cov'
+  };
 
   // Project configuration
   grunt.initConfig({
+    sourceDir: _config.srcDir,
+    instrumentedDir: _config.instDir,
 
     coffeecov: {
       run: {
@@ -79,5 +83,5 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['coffeecov']);
   grunt.registerTask('test', ['mochaTest']);
-
 };
+
