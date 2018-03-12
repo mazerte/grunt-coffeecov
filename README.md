@@ -5,6 +5,7 @@ Grunt task wrapper
 [![Build Status](https://travis-ci.org/mazerte/grunt-coffeecov.png?branch=master)](https://travis-ci.org/mazerte/grunt-coffeecov)
 [![Dependency Status](https://david-dm.org/mazerte/grunt-coffeecov.svg)](https://david-dm.org/mazerte/grunt-coffeecov)
 [![devDependency Status](https://david-dm.org/mazerte/grunt-coffeecov/dev-status.svg)](https://david-dm.org/mazerte/grunt-coffeecov#info=devDependencies)
+[![peerDependencies Status](https://david-dm.org/mazert/grunt-coffeecov/peer-status.svg)](https://david-dm.org/mazert/grunt-coffeecov?type=peer)
 [![Coverage Status](https://img.shields.io/coveralls/mazerte/grunt-coffeecov.svg)](https://coveralls.io/r/mazerte/grunt-coffeecov)
 [![Code Climate](https://codeclimate.com/github/mazerte/grunt-coffeecov.png)](https://codeclimate.com/github/mazerte/grunt-coffeecov)
 [![Gitter](https://badges.gitter.im/mazerte/grunt-coffeecov.svg)](https://gitter.im/mazerte/grunt-coffeecov?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
