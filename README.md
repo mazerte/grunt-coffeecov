@@ -1,18 +1,22 @@
-Grunt CoffeeCov
-===============
+Grunt task wrapper
 
-[![Dependency Status](https://gemnasium.com/mazerte/grunt-coffeecov.png)](https://gemnasium.com/mazerte/grunt-coffeecov)
+# Grunt CoffeeCov
+
 [![Build Status](https://travis-ci.org/mazerte/grunt-coffeecov.png?branch=master)](https://travis-ci.org/mazerte/grunt-coffeecov)
+[![Dependency Status](https://david-dm.org/mazerte/grunt-coffeecov.svg)](https://david-dm.org/mazerte/grunt-coffeecov)
+[![devDependency Status](https://david-dm.org/mazerte/grunt-coffeecov/dev-status.svg)](https://david-dm.org/mazerte/grunt-coffeecov#info=devDependencies)
+[![Coverage Status](https://img.shields.io/coveralls/mazerte/grunt-coffeecov.svg)](https://coveralls.io/r/mazerte/grunt-coffeecov)
 [![Code Climate](https://codeclimate.com/github/mazerte/grunt-coffeecov.png)](https://codeclimate.com/github/mazerte/grunt-coffeecov)
+[![Gitter](https://badges.gitter.im/mazerte/grunt-coffeecov.svg)](https://gitter.im/mazerte/grunt-coffeecov?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](https://gruntjs.com/)
 
-[![NPM](https://nodei.co/npm/grunt-coffeecov.png?downloads=true&stars=true)](https://nodei.co/npm/grunt-coffeecov/) 
-
-Grunt CoffeeCov is a [Grunt][] task wrapper for [CoffeeCoverage][].
+**Grunt CoffeeCov** is a [Grunt][] task wrapper for [CoffeeCoverage][].
 **CoffeeCoverage** compiles `.coffee` files to `.js` files and adds
 [JSCoverage][] style instrumentation for the original [CoffeeScript][].
 
 For more information, I recommend consulting the [CoffeeCoverage][] README.
+
+[![NPM](https://nodei.co/npm/grunt-coffeecov.png?downloads=true&stars=true)](https://nodei.co/npm/grunt-coffeecov/) 
 
 ## Installation
 
