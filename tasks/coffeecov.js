@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       coverageVar: '_$jscoverage',
       exclude: [ 'node_modules', '.git' ],
       initfile: null,
-      path: 'none'
+      path: 'none',
       verbose: null
     });
     options.src = this.data.src;
