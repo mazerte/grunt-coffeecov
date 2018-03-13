@@ -85,30 +85,30 @@ function checkCov(variable, exclude, pathopt) {
   }
 }
 
-describe("Grunt CoffeeCov", function() {
+describe('Grunt CoffeeCov', function () {
 
-  beforeEach(function(done) {
+  beforeEach(function (done) {
     checkSrc();
     grunt.util.spawn({ grunt: true, args: ['clean:cov'] }, function() {
       done();
     });
   });
 
-  it("default configuration", function(done) {
+  it('should run with default configuration', function (done) {
     var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:run'] }, function() {
       checkCov();
       done();
     });
   });
 
-  it("change coverage variable", function(done) {
+  it('should change the coverage variable', function (done) {
     var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:covVar'] }, function() {
       checkCov("_$cov");
       done();
     });
   });
 
-  it("create initfile", function(done) {
+  it('should create an initfile', function (done) {
     var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:initfile'] }, function() {
       checkCov();
       expect("test/src-cov/coverage.js").to.be.a.file().and.not.empty;
@@ -116,7 +116,7 @@ describe("Grunt CoffeeCov", function() {
     });
   });
 
-  it("exclude some file and folder", function(done) {
+  it('should exclude some file and folder', function (done) {
     var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:exclude'] }, function() {
       checkCov(null, true);
       done();
@@ -130,7 +130,7 @@ describe("Grunt CoffeeCov", function() {
     var sourceFile = sourceDir + 'exclude/file.coffee';
     var transpiledFile = 'test/src-cov/exclude/file.js';
 
-    it('should replace each directory with its first letter given "abbr"', function(done) {
+    it('should replace each directory with its first letter given "abbr"', function (done) {
       var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:abbr'] }, function() {
         var pathopt = 'abbr';
         checkCov(undefined, false, pathopt);
@@ -141,7 +141,7 @@ describe("Grunt CoffeeCov", function() {
       });
     });
 
-    it('should use the file\'s relative path given "relative"', function(done) {
+    it('should use the file\'s relative path given "relative"', function (done) {
       var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:relative'] }, function() {
         var pathopt = 'relative';
         checkCov(undefined, false, pathopt);
