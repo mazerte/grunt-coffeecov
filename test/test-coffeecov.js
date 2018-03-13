@@ -85,31 +85,48 @@ function checkCov(variable, exclude, pathopt) {
   }
 }
 
+
 describe('Grunt CoffeeCov', function () {
 
   beforeEach(function (done) {
     checkSrc();
-    grunt.util.spawn({ grunt: true, args: ['clean:cov'] }, function() {
+    grunt.util.spawn({ grunt: true, args: ['clean:cov'] }, function (error, result, code) {
+      if (error) {
+        grunt.log.error(error);
+        done(error);
+      }
       done();
     });
   });
 
   it('should run with default configuration', function (done) {
-    var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:run'] }, function() {
+    grunt.util.spawn({ grunt: true, args: ['coffeecov:run'] }, function (error, result, code) {
+      if (error) {
+        grunt.log.error(error);
+        done(error);
+      }
       checkCov();
       done();
     });
   });
 
   it('should change the coverage variable', function (done) {
-    var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:covVar'] }, function() {
+    grunt.util.spawn({ grunt: true, args: ['coffeecov:covVar'] }, function (error, result, code) {
+      if (error) {
+        grunt.log.error(error);
+        done(error);
+      }
       checkCov("_$cov");
       done();
     });
   });
 
   it('should create an initfile', function (done) {
-    var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:initfile'] }, function() {
+    grunt.util.spawn({ grunt: true, args: ['coffeecov:initfile'] }, function (error, result, code) {
+      if (error) {
+        grunt.log.error(error);
+        done(error);
+      }
       checkCov();
       expect("test/src-cov/coverage.js").to.be.a.file().and.not.empty;
       done();
@@ -117,7 +134,11 @@ describe('Grunt CoffeeCov', function () {
   });
 
   it('should exclude some file and folder', function (done) {
-    var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:exclude'] }, function() {
+    grunt.util.spawn({ grunt: true, args: ['coffeecov:exclude'] }, function (error, result, code) {
+      if (error) {
+        grunt.log.error(error);
+        done(error);
+      }
       checkCov(null, true);
       done();
     });
@@ -131,7 +152,11 @@ describe('Grunt CoffeeCov', function () {
     var transpiledFile = 'test/src-cov/exclude/file.js';
 
     it('should replace each directory with its first letter given "abbr"', function (done) {
-      var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:abbr'] }, function() {
+      grunt.util.spawn({ grunt: true, args: ['coffeecov:abbr'] }, function (error, result, code) {
+        if (error) {
+          grunt.log.error(error);
+          done(error);
+        }
         var pathopt = 'abbr';
         checkCov(undefined, false, pathopt);
         content = fs.readFileSync(transpiledFile, 'utf8');
@@ -142,7 +167,11 @@ describe('Grunt CoffeeCov', function () {
     });
 
     it('should use the file\'s relative path given "relative"', function (done) {
-      var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:relative'] }, function() {
+      grunt.util.spawn({ grunt: true, args: ['coffeecov:relative'] }, function (error, result, code) {
+        if (error) {
+          grunt.log.error(error);
+          done(error);
+        }
         var pathopt = 'relative';
         checkCov(undefined, false, pathopt);
         content = fs.readFileSync(transpiledFile, 'utf8');
