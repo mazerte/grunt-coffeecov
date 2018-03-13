@@ -5,7 +5,7 @@ var
   mkdirs = require('coffee-coverage/lib/utils/helpers').mkdirs,
   CoverageInstrumentor = require('coffee-coverage').CoverageInstrumentor;
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', instrument);
 
@@ -17,7 +17,10 @@ module.exports = function(grunt) {
       bare: null,
       basePath: process.cwd(),
       coverageVar: '_$jscoverage',
-      exclude: [ 'node_modules', '.git' ],
+      exclude: [
+        'node_modules',
+        '.git'
+      ],
       initfile: null,
       path: 'none',
       verbose: null
@@ -32,10 +35,10 @@ module.exports = function(grunt) {
         mkdirs(path.dirname(options.initfile));
 
         var stream = fs.createWriteStream(options.initfile);
-        stream.on('end', function() {
+        stream.on('end', function () {
           done();
         });
-        stream.on('close', function() {
+        stream.on('close', function () {
           done();
         });
 
@@ -44,17 +47,19 @@ module.exports = function(grunt) {
 
       var result = coverageInstrumentor.instrument(this.data.src, this.data.dest, options);
 
-      if(options.initFileStream) {
+      if (options.initFileStream) {
         options.initFileStream.end();
-      } else {        
+      }
+      else {
         done();
       }
 
-      grunt.log.ok("Annotated " + result.lines + " lines.");
+      grunt.log.ok('Instrumented ' + result.lines + ' lines.');
 
-    } catch(err) {
-      if (err.constructor.name === "CoverageError") {
-        grunt.log.error("Error: " + err.message);
+    }
+    catch (err) {
+      if (err.constructor.name === 'CoverageError') {
+        grunt.log.error('Error: ' + err.message);
       }
       throw err;
     }
