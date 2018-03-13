@@ -88,6 +88,8 @@ function checkCov(variable, exclude, pathopt) {
 
 describe('Grunt CoffeeCov', function () {
 
+  this.slow(5000);    // allow extra time for tests due to spawning
+
   beforeEach(function (done) {
     checkSrc();
     var options = {
@@ -113,7 +115,7 @@ describe('Grunt CoffeeCov', function () {
         grunt.log.error(error);
         done(error);
       }
-      checkCov();
+      checkCov(undefined, false, undefined);
       done();
     });
   });
@@ -128,7 +130,7 @@ describe('Grunt CoffeeCov', function () {
         grunt.log.error(error);
         done(error);
       }
-      checkCov('_$cov');
+      checkCov('_$cov', false, undefined);
       done();
     });
   });
@@ -143,8 +145,8 @@ describe('Grunt CoffeeCov', function () {
         grunt.log.error(error);
         done(error);
       }
-      checkCov();
-      expect("test/src-cov/coverage.js").to.be.a.file().and.not.empty;
+      checkCov(undefined, false, undefined);
+      expect('test/src-cov/coverage.js').to.be.a.file().and.not.empty;
       done();
     });
   });
@@ -159,7 +161,7 @@ describe('Grunt CoffeeCov', function () {
         grunt.log.error(error);
         done(error);
       }
-      checkCov(null, true);
+      checkCov(undefined, true, undefined);
       done();
     });
   });
