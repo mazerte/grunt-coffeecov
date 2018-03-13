@@ -69,15 +69,29 @@ describe("Grunt CoffeeCov", function() {
     });
   });
 
-  it("relative option", function(done) {
-    var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:relative'] }, function() {
-      checkCov();
+  describe('when given alternate options to show path in instrumented output', function () {
 
-      content = fs.readFileSync('test/src-cov/exclude/file.js', 'utf8');
-      content.should.have.string('_$jscoverage["exclude/file.coffee"]');
+    it('should replace each directory with its first letter given "abbr"', function(done) {
+      var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:abbr'] }, function() {
+        checkCov();
 
-      done();
+        content = fs.readFileSync('test/src-cov/exclude/file.js', 'utf8');
+        content.should.have.string('_$jscoverage["exclude/file.coffee"]');
+
+        done();
+      });
+    });
+
+    it('should use the file\'s relative path given "relative"', function(done) {
+      var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:relative'] }, function() {
+        checkCov();
+
+        content = fs.readFileSync('test/src-cov/exclude/file.js', 'utf8');
+        content.should.have.string('_$jscoverage["exclude/file.coffee"]');
+
+        done();
+      });
     });
   });
-
 });
+
