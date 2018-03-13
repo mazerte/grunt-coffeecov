@@ -10,15 +10,17 @@ module.exports = function(grunt) {
     var done = this.async();
 
     var options = this.options({
-      verbose: null,
       bare: null,
+      basePath: process.cwd(),
       coverageVar: '_$jscoverage',
       exclude: [ 'node_modules', '.git' ],
       initfile: null,
       path: 'none'
+      verbose: null
     });
     options.src = this.data.src;
     options.dest = this.data.dest;
+    options.basePath = path.resolve(options.basePath);
 
     var coverageInstrumentor = new CoverageInstrumentor(options);
     try {
