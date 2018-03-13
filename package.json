@@ -1,7 +1,7 @@
 {
   "name": "grunt-coffeecov",
-  "version": "0.1.5",
-  "description": "Grunt task to compile CoffeeScript to Javascript Coverage",
+  "version": "0.1.6",
+  "description": "Grunt task to compile CoffeeScript to Javascript with JSCoverage-compatible instrumentation for code coverage",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "grunt test"
@@ -14,18 +14,20 @@
     "grunt",
     "gruntplugin",
     "coffeescript",
+    "instrument",
+    "instrumentation",
     "coverage"
   ],
   "author": "Mathieu Desvé",
+  "contributors": [
+    "P. Roebuck (https://github.com/plroebuck/)"
+  ],
   "license": "BSD",
-  "engines": {
-    "node": "*"
-  },
   "dependencies": {
     "coffee-coverage": "~0.4.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4"
+    "grunt": ">=0.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -33,5 +35,8 @@
     "chai": "~1.8.1",
     "grunt-mocha-test": "~0.8.1",
     "grunt-contrib-clean": "~0.5.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
   }
 }
