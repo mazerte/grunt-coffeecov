@@ -1,0 +1,19 @@
+extends: node-style-guide
+env:
+ node: true
+rules:
+ brace-style: [ 2, stroustrup ]
+ comma-dangle: [ 2, never ]
+ eol-last: [ 2, always ]
+ indent: [ 1, 2, { "SwitchCase": 1 } ]
+ keyword-spacing: [ 2, { before: true, after: true } ]
+ linebreak-style: [ 2, unix ]
+ max-len: [ 1, { code: 100 } ]
+ no-console: off
+ no-multiple-empty-lines: [ 2, { max: 2 } ]
+ no-tabs: 2
+ no-trailing-spaces: 2
+ no-unused-vars: [ 2, { args: none } ]
+ semi: [ 2, always ]
+ space-after-keywords: off
+
