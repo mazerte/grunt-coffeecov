@@ -1,3 +1,9 @@
+/**
+ * @file Grunt 'coffeecov' task implementation
+ */
+
+'use strict';
+
 var
   fs = require('fs'),
   path = require('path');
