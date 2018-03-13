@@ -69,7 +69,7 @@ describe("Grunt CoffeeCov", function() {
     });
   });
 
-  it("relative option", function(done) {
+  it.skip("relative option", function(done) {
     var child = grunt.util.spawn({ grunt: true, args: ['coffeecov:relative'] }, function() {
       checkCov();
 
