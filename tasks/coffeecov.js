@@ -7,7 +7,9 @@ var
 
 module.exports = function (grunt) {
 
-  grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', instrument);
+  var taskDescription = 'Compile CoffeeScript to Javascript with ' +
+    'JSCoverage-compatible instrumentation for code coverage';
+  grunt.registerMultiTask('coffeecov', taskDescription, instrument);
 
   // eslint-disable-next-line max-statements
   function instrument() {
@@ -22,6 +24,7 @@ module.exports = function (grunt) {
         '.git'
       ],
       initfile: null,
+      inst: 'jscoverage',
       path: 'none',
       verbose: null
     });
@@ -29,7 +32,7 @@ module.exports = function (grunt) {
     options.dest = this.data.dest;
     options.basePath = path.resolve(options.basePath);
 
-    var coverageInstrumentor = new CoverageInstrumentor(options);
+    var instrumentor = new CoverageInstrumentor(options);
     try {
       if (options.initfile) {
         mkdirs(path.dirname(options.initfile));
@@ -45,7 +48,7 @@ module.exports = function (grunt) {
         options.initFileStream = stream;
       }
 
-      var result = coverageInstrumentor.instrument(this.data.src, this.data.dest, options);
+      var result = instrumentor.instrument(options.src, options.dest, options);
 
       if (options.initFileStream) {
         options.initFileStream.end();
@@ -54,12 +57,18 @@ module.exports = function (grunt) {
         done();
       }
 
-      grunt.log.ok('Instrumented ' + result.lines + ' lines.');
+      if (!result) {
+        grunt.log.error(options.src + ' does not exist.');
+      }
+      else {
+        grunt.log.ok('Instrumented ' + result.lines + ' lines.');
+      }
 
     }
     catch (err) {
       if (err.constructor.name === 'CoverageError') {
         grunt.log.error('Error: ' + err.message);
+        grunt.fatal(err);
       }
       throw err;
     }
