@@ -1,15 +1,15 @@
 var CoverageInstrumentor = require('coffee-coverage').CoverageInstrumentor;
 var path = require('path')
-	, fs = require('fs')
+  , fs = require('fs')
   , mkdirs = require('coffee-coverage/lib/helpers').mkdirs;
 
 module.exports = function(grunt) {
 
-	grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', function() {
+  grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', function() {
 
     var done = this.async();
 
-		var options = this.options({
+    var options = this.options({
       verbose: null,
       bare: null,
       coverageVar: '_$jscoverage',
@@ -20,8 +20,8 @@ module.exports = function(grunt) {
     options.src = this.data.src;
     options.dest = this.data.dest;
 
-		var coverageInstrumentor = new CoverageInstrumentor(options);
-		try {
+    var coverageInstrumentor = new CoverageInstrumentor(options);
+    try {
       if (options.initfile) {
         mkdirs(path.dirname(options.initfile));
 
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         options.initFileStream = stream;
       }
 
-			var result = coverageInstrumentor.instrument(this.data.src, this.data.dest, options);
+      var result = coverageInstrumentor.instrument(this.data.src, this.data.dest, options);
 
       if(options.initFileStream) {
         options.initFileStream.end();
@@ -44,14 +44,15 @@ module.exports = function(grunt) {
         done();
       }
 
-			grunt.log.ok("Annotated " + result.lines + " lines.");
+      grunt.log.ok("Annotated " + result.lines + " lines.");
 
-		} catch(err) {
-			if (err.constructor.name === "CoverageError") {
-				grunt.log.error("Error: " + err.message);
-			}
-			throw err;
-		}
-	});
+    } catch(err) {
+      if (err.constructor.name === "CoverageError") {
+        grunt.log.error("Error: " + err.message);
+      }
+      throw err;
+    }
+  });
 
 };
+
