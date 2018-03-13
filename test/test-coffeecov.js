@@ -1,13 +1,19 @@
-var chai = require('chai')
-  , expect = chai.expect
-  , should = chai.should()
-  , chaiFS = require('chai-fs')
-  , fs = require('fs')
-  , grunt = require('grunt')
-  , path = require('path');
+// eslint-env mocha
 
-chai.use(chaiFS);
+var
+  chai = require('chai'),
+  fs = require('fs'),
+  grunt = require('grunt'),
+  path = require('path');
 
+chai.use(require('chai-fs'));
+var
+  expect = chai.expect,
+  should = chai.should();    // eslint-disable-line no-unused-vars
+
+/**
+ *
+ */
 function checkSrc() {
   expect("test/src/test.coffee").to.be.a.file().and.not.empty;
   expect("test/src/exclude.coffee").to.be.a.file().and.not.empty;
