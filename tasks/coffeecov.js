@@ -1,7 +1,7 @@
 var CoverageInstrumentor = require('coffee-coverage').CoverageInstrumentor;
 var path = require('path')
   , fs = require('fs')
-  , mkdirs = require('coffee-coverage/lib/helpers').mkdirs;
+  , mkdirs = require('coffee-coverage/lib/utils/helpers').mkdirs;
 
 module.exports = function(grunt) {
 
