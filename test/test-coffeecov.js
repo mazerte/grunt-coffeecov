@@ -15,9 +15,9 @@ var
  *
  */
 function checkSrc() {
-  expect("test/src/test.coffee").to.be.a.file().and.not.empty;
-  expect("test/src/exclude.coffee").to.be.a.file().and.not.empty;
-  expect("test/src/exclude/file.coffee").to.be.a.file().and.not.empty;
+  expect('test/src/test.coffee').to.be.a.file().and.not.empty;
+  expect('test/src/exclude.coffee').to.be.a.file().and.not.empty;
+  expect('test/src/exclude/file.coffee').to.be.a.file().and.not.empty;
 }
 
 /**
@@ -128,7 +128,7 @@ describe('Grunt CoffeeCov', function () {
         grunt.log.error(error);
         done(error);
       }
-      checkCov("_$cov");
+      checkCov('_$cov');
       done();
     });
   });
