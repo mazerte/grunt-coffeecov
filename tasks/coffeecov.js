@@ -1,12 +1,16 @@
-var CoverageInstrumentor = require('coffee-coverage').CoverageInstrumentor;
-var path = require('path')
-  , fs = require('fs')
-  , mkdirs = require('coffee-coverage/lib/utils/helpers').mkdirs;
+var
+  fs = require('fs'),
+  path = require('path');
+var
+  mkdirs = require('coffee-coverage/lib/utils/helpers').mkdirs,
+  CoverageInstrumentor = require('coffee-coverage').CoverageInstrumentor;
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', function() {
+  grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', instrument);
 
+  // eslint-disable-next-line max-statements
+  function instrument() {
     var done = this.async();
 
     var options = this.options({
@@ -54,7 +58,6 @@ module.exports = function(grunt) {
       }
       throw err;
     }
-  });
-
+  }
 };
 
