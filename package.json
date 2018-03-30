@@ -1,6 +1,6 @@
 {
   "name": "grunt-coffeecov",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Grunt task to compile CoffeeScript to Javascript with JSCoverage-compatible instrumentation for code coverage",
   "main": "Gruntfile.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "test": "./test"
   },
   "dependencies": {
-    "coffee-coverage": "^3.0.0"
+    "coffee-coverage": "1.0.2"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
