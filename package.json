@@ -31,7 +31,8 @@
     "test": "./test"
   },
   "dependencies": {
-    "coffee-coverage": "1.0.2"
+    "coffee-coverage": "<=2.0.0",
+    "coffee-script": "<=2.0.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
@@ -50,6 +51,7 @@
     "mocha": "^5.0.4"
   },
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">=4.9.1"
+    "npm": ">=2.15.11"
   }
 }
