@@ -1,50 +1,66 @@
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+  // Global configuration
+  var globalConfig = {
+    srcDir: 'test/src',
+    instDir: 'test/src-cov'
+  };
 
-  // Project configuration.
+  // Project configuration
   grunt.initConfig({
+    sourceDir: globalConfig.srcDir,
+    instrumentedDir: globalConfig.instDir,
 
     coffeecov: {
       run: {
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src: '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       covVar: {
         options: {
-          coverageVar: "_$cov"
+          coverageVar: '_$cov'
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src: '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       initfile: {
         options: {
-          initfile: "test/src-cov/coverage.js"
+          initfile: '<%= instrumentedDir %>/coverage.js'
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src: '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       exclude: {
         options: {
           exclude: [
-            "exclude.coffee",
-            "exclude"
+            'exclude.coffee',
+            'exclude'
           ]
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src: '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
+      },
+      abbr: {
+        options: {
+          path: 'abbr'
+        },
+        src: '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       },
       relative: {
         options: {
           path: 'relative'
         },
-        src: 'test/src',
-        dest: 'test/src-cov'
+        src: '<%= sourceDir %>',
+        dest: '<%= instrumentedDir %>'
       }
     },
 
     clean: {
-      cov: ['test/src-cov'],
+      cov: [
+        '<%= instrumentedDir %>'
+      ]
     },
 
     mochaTest: {
@@ -66,5 +82,5 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['coffeecov']);
   grunt.registerTask('test', ['mochaTest']);
-
 };
+

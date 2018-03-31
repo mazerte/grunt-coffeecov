@@ -1,57 +1,83 @@
-var CoverageInstrumentor = require('coffee-coverage').CoverageInstrumentor;
-var path = require('path')
-	, fs = require('fs')
-  , mkdirs = require('coffee-coverage/lib/helpers').mkdirs;
+/**
+ * @file Grunt 'coffeecov' task implementation
+ */
 
-module.exports = function(grunt) {
+'use strict';
 
-	grunt.registerMultiTask('coffeecov', 'Compile CoffeeScript to Javascript Coverage', function() {
+var
+  fs = require('fs'),
+  path = require('path');
+var
+  mkdirs = require('coffee-coverage/lib/utils/helpers').mkdirs,
+  CoverageInstrumentor = require('coffee-coverage').CoverageInstrumentor;
 
+module.exports = function (grunt) {
+
+  var taskDescription = 'Compile CoffeeScript to Javascript with ' +
+    'JSCoverage-compatible instrumentation for code coverage';
+  grunt.registerMultiTask('coffeecov', taskDescription, instrument);
+
+  // eslint-disable-next-line max-statements
+  function instrument() {
     var done = this.async();
 
-		var options = this.options({
-      verbose: null,
+    var options = this.options({
       bare: null,
+      basePath: process.cwd(),
       coverageVar: '_$jscoverage',
-      exclude: [ 'node_modules', '.git' ],
+      exclude: [
+        'node_modules',
+        '.git'
+      ],
       initfile: null,
-      path: 'none'
+      inst: 'jscoverage',
+      path: 'none',
+      verbose: null
     });
     options.src = this.data.src;
     options.dest = this.data.dest;
+    options.basePath = path.resolve(options.basePath);
 
-		var coverageInstrumentor = new CoverageInstrumentor(options);
-		try {
+    var instrumentor = new CoverageInstrumentor(options);
+    try {
       if (options.initfile) {
         mkdirs(path.dirname(options.initfile));
 
         var stream = fs.createWriteStream(options.initfile);
-        stream.on('end', function() {
+        stream.on('end', function () {
           done();
         });
-        stream.on('close', function() {
+        stream.on('close', function () {
           done();
         });
 
         options.initFileStream = stream;
       }
 
-			var result = coverageInstrumentor.instrument(this.data.src, this.data.dest, options);
+      var result = instrumentor.instrument(options.src, options.dest, options);
 
-      if(options.initFileStream) {
+      if (options.initFileStream) {
         options.initFileStream.end();
-      } else {        
+      }
+      else {
         done();
       }
 
-			grunt.log.ok("Annotated " + result.lines + " lines.");
+      if (!result) {
+        grunt.log.error(options.src + ' does not exist.');
+      }
+      else {
+        grunt.log.ok('Instrumented ' + result.lines + ' lines.');
+      }
 
-		} catch(err) {
-			if (err.constructor.name === "CoverageError") {
-				grunt.log.error("Error: " + err.message);
-			}
-			throw err;
-		}
-	});
-
+    }
+    catch (err) {
+      if (err.constructor.name === 'CoverageError') {
+        grunt.log.error('Error: ' + err.message);
+        grunt.fatal(err);
+      }
+      throw err;
+    }
+  }
 };
+

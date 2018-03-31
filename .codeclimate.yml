@@ -1,0 +1,18 @@
+###
+### .codeclimate.yml
+###
+
+version: "2"
+plugins:
+  eslint:
+    enabled: true
+  markdownlint:
+    enabled: true
+  nodesecurity:
+    enabled: true
+exclude_patterns:
+  - "Gruntfile.js"
+  - "**/node_modules/"
+  - "**/test/"
+  - "**/tests/"
+
