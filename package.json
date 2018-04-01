@@ -1,6 +1,6 @@
 {
   "name": "grunt-coffeecov",
-  "version": "0.1.8",
+  "version": "1.0.0-beta",
   "description": "Grunt task to compile CoffeeScript to Javascript with JSCoverage-compatible instrumentation for code coverage",
   "main": "Gruntfile.js",
   "scripts": {
