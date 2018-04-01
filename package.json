@@ -22,7 +22,7 @@
   "contributors": [
     "P. Roebuck (https://github.com/plroebuck/)"
   ],
-  "license": "BSD",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/mazerte/grunt-coffeecov/issues/"
   },
