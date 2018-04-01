@@ -1,37 +1,57 @@
 {
   "name": "grunt-coffeecov",
-  "version": "0.1.5",
-  "description": "Grunt task to compile CoffeeScript to Javascript Coverage",
+  "version": "0.1.8",
+  "description": "Grunt task to compile CoffeeScript to Javascript with JSCoverage-compatible instrumentation for code coverage",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mazerte/grunt-coffeecov"
+    "url": "https://github.com/mazerte/grunt-coffeecov.git"
   },
   "keywords": [
     "grunt",
     "gruntplugin",
     "coffeescript",
+    "instrument",
+    "instrumentation",
     "coverage"
   ],
   "author": "Mathieu Desvé",
+  "contributors": [
+    "P. Roebuck (https://github.com/plroebuck/)"
+  ],
   "license": "BSD",
-  "engines": {
-    "node": "*"
+  "bugs": {
+    "url": "https://github.com/mazerte/grunt-coffeecov/issues/"
+  },
+  "homepage": "https://github.com/mazerte/grunt-coffeecov/",
+  "directories": {
+    "test": "./test"
   },
   "dependencies": {
-    "coffee-coverage": "~0.4.0"
+    "coffee-coverage": "<2.0.0",
+    "coffee-script": "<2.0.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4"
+    "grunt": ">=0.4.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "chai-fs": "0.0.3",
-    "chai": "~1.8.1",
-    "grunt-mocha-test": "~0.8.1",
-    "grunt-contrib-clean": "~0.5.0"
+    "chai": "^4.1.2",
+    "chai-fs": "^2.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-node-style-guide": "^3.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "grunt": "^1.0.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "mocha": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=4.9.1",
+    "npm": ">=2.15.11"
   }
 }
