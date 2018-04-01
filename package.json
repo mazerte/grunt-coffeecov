@@ -1,6 +1,6 @@
 {
   "name": "grunt-coffeecov",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "description": "Grunt task to compile CoffeeScript to Javascript with JSCoverage-compatible instrumentation for code coverage",
   "main": "Gruntfile.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "contributors": [
     "P. Roebuck (https://github.com/plroebuck/)"
   ],
-  "license": "BSD",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/mazerte/grunt-coffeecov/issues/"
   },
@@ -43,8 +43,6 @@
     "eslint": "^4.18.2",
     "eslint-config-node-style-guide": "^3.0.0",
     "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
     "grunt": "^1.0.2",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
