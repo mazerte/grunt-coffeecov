@@ -1,13 +1,14 @@
 # Grunt CoffeeCov
 
-[![Build Status](https://travis-ci.org/mazerte/grunt-coffeecov.png?branch=master)](https://travis-ci.org/mazerte/grunt-coffeecov)
-[![Dependency Status](https://david-dm.org/mazerte/grunt-coffeecov.svg)](https://david-dm.org/mazerte/grunt-coffeecov)
-[![devDependency Status](https://david-dm.org/mazerte/grunt-coffeecov/dev-status.svg)](https://david-dm.org/mazerte/grunt-coffeecov#info=devDependencies)
-[![peerDependencies Status](https://david-dm.org/mazerte/grunt-coffeecov/peer-status.svg)](https://david-dm.org/mazerte/grunt-coffeecov?type=peer)
-[![Coverage Status](https://img.shields.io/coveralls/mazerte/grunt-coffeecov.svg)](https://coveralls.io/r/mazerte/grunt-coffeecov)
-[![Code Climate](https://codeclimate.com/github/mazerte/grunt-coffeecov.png)](https://codeclimate.com/github/mazerte/grunt-coffeecov)
-[![Gitter](https://badges.gitter.im/mazerte/grunt-coffeecov.svg)](https://gitter.im/mazerte/grunt-coffeecov?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](https://gruntjs.com/)
+Task wrapper for CoffeeCoverage
+
+[![Build Status][Travis-GCC-badge]][Travis-GCC]
+[![Dependency Status][DavidDM-GCCDep-badge]][DavidDM-GCCDep]
+[![devDependency Status][DavidDM-GCCDevDep-badge]][DavidDM-GCCDevDep]
+[![peerDependencies Status][DavidDM-GCCPeerDep-badge]][DavidDM-GCCPeerDep]
+[![Coverage Status][Coveralls-GCC-badge]][Coveralls-GCC]
+[![Gitter][Gitter-GCC-badge]][Gitter-GCC]
+[![Built with Grunt][BuiltWithGrunt-badge]][Grunt]
 
 **Grunt CoffeeCov** is a [Grunt][] task wrapper for [CoffeeCoverage][].
 **CoffeeCoverage** compiles `.coffee` files to `.js` files and adds
@@ -15,7 +16,7 @@
 
 For more information, I recommend consulting the [CoffeeCoverage][] README.
 
-[![NPM](https://nodei.co/npm/grunt-coffeecov.png?downloads=true&stars=true)](https://nodei.co/npm/grunt-coffeecov/) 
+[![NPM][NPM-GCC-badge]][NPM-GCC]
 
 ## Installation
 
@@ -129,10 +130,20 @@ Path can be given one of three different parameters:
 
 Paths are always relative to the `src` directory provided on Grunt task.
 
+## Problems?
+
+Please submit an issue.
+
+```bash
+$ npm issues grunt-coffeecov
+```
+
 ## Thanks
 
 Thanks to [Benbria][] for [CoffeeCoverage][].
 
+
+[//]: # (Cross reference section)
 
 [Grunt]: https://gruntjs.com/
 [Benbria]: https://github.com/benbria/
@@ -145,4 +156,20 @@ Thanks to [Benbria][] for [CoffeeCoverage][].
 [Footguard]: https://github.com/mazerte/generator-footguard/
 [Test-footguard]: https://github.com/mazerte/test-footguard/
 [grunt-phantom-coverage-reporter]: https://github.com/mazerte/mocha-phantom-coverage-reporter/
+
+[Travis-GCC]: https://travis-ci.org/mazerte/grunt-coffeecov/
+[Travis-GCC-badge]: https://travis-ci.org/mazerte/grunt-coffeecov.png?branch=master
+[DavidDM-GCCDep]: https://david-dm.org/mazerte/grunt-coffeecov/
+[DavidDM-GCCDep-badge]: https://david-dm.org/mazerte/grunt-coffeecov/status.svg
+[DavidDM-GCCDevDep]: https://david-dm.org/mazerte/grunt-coffeecov/?type=dev
+[DavidDM-GCCDevDep-badge]: https://david-dm.org/mazerte/grunt-coffeecov/dev-status.svg
+[DavidDM-GCCPeerDep]: https://david-dm.org/mazerte/grunt-coffeecov/?type=peer
+[DavidDM-GCCPeerDep-badge]: https://david-dm.org/mazerte/grunt-coffeecov/peer-status.svg
+[Coveralls-GCC]: https://coveralls.io/r/mazerte/grunt-coffeecov/
+[Coveralls-GCC-badge]: https://img.shields.io/coveralls/mazerte/grunt-coffeecov.svg
+[Gitter-GCC]: https://gitter.im/mazerte/grunt-coffeecov/
+[Gitter-GCC-badge]: https://badges.gitter.im/mazerte/grunt-coffeecov.svg
+[NPM-GCC]: https://npmjs.org/package/grunt-coffeecov/
+[NPM-GCC-badge]: https://nodei.co/npm/grunt-coffeecov.png
+[BuiltWithGrunt-badge]: https://cdn.gruntjs.com/builtwith.png
 

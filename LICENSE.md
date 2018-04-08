@@ -1,6 +1,3 @@
-Internet Systems Consortium license
-===================================
-
 Copyright (c) 2013, Mathieu Desvé
 
 Permission to use, copy, modify, and/or distribute this software for any purpose
